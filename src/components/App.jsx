@@ -6,6 +6,7 @@ import { Searchbar } from './Searchbar';
 import { Component } from 'react';
 import { getImages } from 'services';
 import { toast, ToastContainer } from 'react-toastify';
+import { toastOptions } from 'constants/toestOptions';
 import { ImageGallery } from './ImageGallery';
 import { Modal } from './Modal';
 
@@ -30,7 +31,7 @@ export class App extends Component {
         const hits = data.hits;
 
         if (!hits.length) {
-          toast.error('Ups, nothing to search');
+          toast.error('Ups, nothing to search', toastOptions);
         }
 
         this.setState(state => ({
